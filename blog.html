@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog - Papushkado · Cyber Ninja</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="bg-overlay"></div>
+
+  <header class="main-header">
+    <div class="logo">
+      <span class="logo-symbol">忍</span>
+      <span class="logo-text">Ninja<span>Cloud</span></span>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Accueil</a>
+      <a href="projets.html" class="nav-link">Projets</a>
+      <a href="blog.html" class="nav-link active">Blog</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
+        ☾
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <h1 class="section-title">Blog</h1>
+      <p class="section-intro">
+        Notes techniques, retours d’expérience et réflexions à la frontière 
+        entre cybersécurité, actuariat et cloud.
+      </p>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-header">
+            <h2>Modéliser le risque cyber comme un CAT model</h2>
+            <span class="project-tag">Actuariat · Cyber</span>
+          </div>
+          <p>
+            Comment rapprocher la modélisation CAT “classique” des spécificités du risque cyber :
+            scénarios, dépendances, données partielles… et ce que ça change en pratique.
+          </p>
+          <p class="project-meta">
+            Article à venir – brouillon disponible sur demande.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <h2>Ce que les CTF apprennent aux actuaires (et inversement)</h2>
+            <span class="project-tag">Cybersécurité · Mindset</span>
+          </div>
+          <p>
+            Les parallèles entre la résolution de challenges CTF et la construction de modèles
+            de risque : hypothèses, adversarial thinking, documentation, limites.
+          </p>
+          <p class="project-meta">
+            Article en cours – idéal pour une future série de billets.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <h2>Construire un cluster MySQL HA sans perdre sa sanité</h2>
+            <span class="project-tag">Cloud · DevOps</span>
+          </div>
+          <p>
+            Retour d’expérience sur DBCluster : design, choix techniques, bonnes pratiques
+            de sécurité et pièges à éviter côté infra.
+          </p>
+          <p class="project-meta">
+            Bientôt : schémas, snippets Terraform/Docker, checklists.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <span>© <span id="year"></span> Papushkado · Ninja Cloud Actuaire.</span>
+    <span class="footer-meta">Blog en construction — labo d’expérimentations.</span>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
