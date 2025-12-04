@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Projets - Papushkado · Cyber Ninja</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="bg-overlay"></div>
+
+  <header class="main-header">
+    <div class="logo">
+      <span class="logo-symbol">忍</span>
+      <span class="logo-text">Ninja<span>Cloud</span></span>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Accueil</a>
+      <a href="projets.html" class="nav-link active">Projets</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
+        ☾
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <h1 class="section-title">Projets & Missions</h1>
+      <p class="section-intro">
+        Un aperçu de mes explorations entre cybersécurité, cloud, actuariat et IoT.
+      </p>
+
+      <div class="projects-grid">
+        <!-- Cybersécurité & Red Team -->
+        <article class="project-card">
+          <div class="project-header">
+            <h2>Write-ups CTFs & Red Team</h2>
+            <span class="project-tag">Cybersécurité</span>
+          </div>
+          <p>
+            Collection de write-ups CTF couvrant OSINT, web-hacking, JWT, cryptographie,
+            IA et même quantique (404CTF, UnitedCTF, MidnightCTF). Un laboratoire
+            vivant pour tester, comprendre et documenter les vulnérabilités.
+          </p>
+          <ul class="project-meta">
+            <li><strong>Stack :</strong> Linux, Python, tooling CTF, crypto, OSINT.</li>
+            <li><strong>Focus :</strong> pédagogie, rigueur méthodologique, esprit red team.</li>
+          </ul>
+          <a href="https://github.com/Papushkado/Write-ups-CTFs" class="project-link" target="_blank">
+            Voir le repo GitHub
+          </a>
+        </article>
+
+        <!-- Cloud & Infra -->
+        <article class="project-card">
+          <div class="project-header">
+            <h2>DBCluster – MySQL HA sur AWS</h2>
+            <span class="project-tag">Cloud & DevOps</span>
+          </div>
+          <p>
+            Mise en place d’un cluster MySQL haute disponibilité sur AWS, avec ProxySQL,
+            load balancing, règles de sécurité et automatisation. Objectif : une infra
+            robuste et observable pour des workloads critiques.
+          </p>
+          <ul class="project-meta">
+            <li><strong>Stack :</strong> AWS, MySQL, ProxySQL, Terraform / Docker (selon setup).</li>
+            <li><strong>Focus :</strong> résilience, performance, sécurité.</li>
+          </ul>
+          <a href="https://github.com/Papushkado/DBCluster" class="project-link" target="_blank">
+            Voir le repo GitHub
+          </a>
+        </article>
+
+        <!-- Actuariat & CAT -->
+        <article class="project-card">
+          <div class="project-header">
+            <h2>Cyber CAT Models – Dattak</h2>
+            <span class="project-tag">Actuariat & Risk</span>
+          </div>
+          <p>
+            Modélisation CAT Cyber (empirique & scénarios), calibrage de pertes et
+            construction de dashboards pour piloter l’exposition. Croisement entre
+            cybersécurité, actuariat et data visualisation.
+          </p>
+          <ul class="project-meta">
+            <li><strong>Stack :</strong> Python, stats, data viz, risk modelling.</li>
+            <li><strong>Focus :</strong> prise de décision, compréhension des risques extrêmes.</li>
+          </ul>
+          <a href="#" class="project-link">
+            Détails confidentiels – résumé sur demande
+          </a>
+        </article>
+
+        <!-- IoT & Prototypage -->
+        <article class="project-card">
+          <div class="project-header">
+            <h2>Indoor Localisation & SMARTIES</h2>
+            <span class="project-tag">IoT & Prototypage</span>
+          </div>
+          <p>
+            Recherche sur la localisation indoor (bluetooth fingerprinting, K-NN / SVM)
+            et projet SMARTIES : soirées connectées avec capteurs et WebSocket.
+            Mélange de réseau, IA, IoT et expérience utilisateur.
+          </p>
+          <ul class="project-meta">
+            <li><strong>Stack :</strong> Bluetooth, K-NN/SVM, API WebSocket, capteurs IoT.</li>
+            <li><strong>Focus :</strong> prototypage rapide, expérimentation, fun.</li>
+          </ul>
+          <a href="https://github.com/Papushkado/GIN206_localisation_indoors" class="project-link" target="_blank">
+            Localisation Indoor
+          </a>
+          <br>
+          <a href="https://github.com/Papushkado/ioT_Telecom" class="project-link" target="_blank">
+            SMARTIES – Soirées connectées
+          </a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <span>© <span id="year"></span> Papushkado · Ninja Cloud Actuaire.</span>
+    <span class="footer-meta">Toujours dans l’ombre. Toujours en ligne.</span>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
