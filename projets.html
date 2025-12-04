@@ -29,93 +29,173 @@
     <section class="section">
       <h1 class="section-title">Projets & Missions</h1>
       <p class="section-intro">
-        Un aperçu de mes explorations entre cybersécurité, cloud, actuariat et IoT.
+        Une sélection de projets qui croisent cybersécurité, cloud, actuariat et data science.
+        Chaque projet est pensé comme un petit laboratoire pour tester des idées et pousser la technique.
       </p>
 
       <div class="projects-grid">
-        <!-- Cybersécurité & Red Team -->
+
+        <!-- ============================
+             ACTUARIAT & RISK MODELLING
+        ============================= -->
+        <article class="project-card">
+          <div class="project-header">
+            <h2>Estimation bayésienne de la durée de fonctionnement des véhicules de chantier</h2>
+            <span class="project-tag">Actuariat · Bayésien</span>
+          </div>
+          <p>
+            Projet de recherche M2 (2025) : développement d’un modèle hiérarchique bayésien pour estimer
+            la durée de fonctionnement de véhicules de chantier dans un contexte assurantiel. Le modèle
+            combine une loi de Weibull pour les durées de fonctionnement et une loi exponentielle pour les
+            durées de maintenance, en intégrant des covariables chantier et maintenance (sol, météo,
+            distance, techniciens…).
+          </p>
+          <ul class="project-meta">
+            <li>
+              <strong>Objectif :</strong> prédire la durée de vie résiduelle, quantifier l’incertitude
+              et proposer une méthodologie de tarification pour les contrats d’assurance (facteur de risque,
+              durée de couverture, prime ajustée).
+            </li>
+            <li>
+              <strong>Approche :</strong> modèles linéaires & réseaux de neurones pour les fonctions
+              de lien <code>g₁</code> et <code>g₂</code>, estimation fréquentiste (MLE) puis
+              inférence bayésienne (Metropolis–Hastings adaptatif), validation sur données simulées.
+            </li>
+            <li>
+              <strong>Insights clés :</strong> importance dominante de la nature du sol,
+              rôle plus modéré de la maintenance précédente, possibilité de catégoriser les chantiers
+              par niveau de risque et d’ajuster les primes en conséquence.
+            </li>
+            <li>
+              <strong>Stack :</strong> Python (pandas, NumPy, PyMC3 / MCMC maison), stats bayésiennes,
+              analyse de survie (Weibull, exponentielle), visualisation.
+            </li>
+          </ul>
+          <a href="https://github.com/Papushkado/Bayesian_Statistics" class="project-link" target="_blank">
+            Voir le repo “Bayesian_Statistics”
+          </a>
+        </article>
+
+        <!-- ============================
+             CYBERSÉCURITÉ & RED TEAM
+        ============================= -->
         <article class="project-card">
           <div class="project-header">
             <h2>Write-ups CTFs & Red Team</h2>
             <span class="project-tag">Cybersécurité</span>
           </div>
           <p>
-            Collection de write-ups CTF couvrant OSINT, web-hacking, JWT, cryptographie,
-            IA et même quantique (404CTF, UnitedCTF, MidnightCTF). Un laboratoire
-            vivant pour tester, comprendre et documenter les vulnérabilités.
+            Collection structurée de write-ups CTF couvrant OSINT, web-hacking, JWT, cryptographie,
+            IA et même challenges quantiques (404CTF, UnitedCTF, MidnightCTF…). L’objectif : documenter
+            les approches, les erreurs, les pivots et les learnings, plutôt que de simplement donner
+            “la solution”.
           </p>
           <ul class="project-meta">
-            <li><strong>Stack :</strong> Linux, Python, tooling CTF, crypto, OSINT.</li>
-            <li><strong>Focus :</strong> pédagogie, rigueur méthodologique, esprit red team.</li>
+            <li><strong>Contenu :</strong> write-ups détaillés, scripts d’exploitation, notes de méthodo.</li>
+            <li><strong>Focus :</strong> rigueur, reproductibilité, pédagogie pour soi et les autres.</li>
+            <li><strong>Stack :</strong> Linux, Python, outils CTF, crypto, OSINT, web.</li>
           </ul>
           <a href="https://github.com/Papushkado/Write-ups-CTFs" class="project-link" target="_blank">
-            Voir le repo GitHub
+            Voir le repo “Write-ups-CTFs”
           </a>
         </article>
 
-        <!-- Cloud & Infra -->
+        <!-- ============================
+             CLOUD & INFRA / DEVOPS
+        ============================= -->
         <article class="project-card">
           <div class="project-header">
-            <h2>DBCluster – MySQL HA sur AWS</h2>
+            <h2>DBCluster – Cluster MySQL haute dispo sur AWS</h2>
             <span class="project-tag">Cloud & DevOps</span>
           </div>
           <p>
-            Mise en place d’un cluster MySQL haute disponibilité sur AWS, avec ProxySQL,
-            load balancing, règles de sécurité et automatisation. Objectif : une infra
-            robuste et observable pour des workloads critiques.
+            Mise en place d’un cluster MySQL haute disponibilité sur AWS avec ProxySQL, load-balancing
+            et sécurisation réseau. L’objectif est de disposer d’une base robuste, scalable et observable
+            pour des workloads critiques, en s’appuyant au maximum sur l’infra-as-code.
           </p>
           <ul class="project-meta">
-            <li><strong>Stack :</strong> AWS, MySQL, ProxySQL, Terraform / Docker (selon setup).</li>
-            <li><strong>Focus :</strong> résilience, performance, sécurité.</li>
+            <li><strong>Objectif :</strong> tolérance aux pannes, continuité de service, performances stables.</li>
+            <li><strong>Concepts :</strong> HA, failover, routage de requêtes, durcissement de la surface d’attaque.</li>
+            <li><strong>Stack :</strong> AWS, MySQL, ProxySQL, (Terraform / Docker / Ansible selon setup).</li>
           </ul>
           <a href="https://github.com/Papushkado/DBCluster" class="project-link" target="_blank">
-            Voir le repo GitHub
+            Voir le repo “DBCluster”
           </a>
         </article>
 
-        <!-- Actuariat & CAT -->
+        <!-- ============================
+             DATA SCIENCE / PRÉDICTION
+        ============================= -->
         <article class="project-card">
           <div class="project-header">
-            <h2>Cyber CAT Models – Dattak</h2>
-            <span class="project-tag">Actuariat & Risk</span>
+            <h2>Prédiction immobilière avec XGBoost & Streamlit</h2>
+            <span class="project-tag">Data Science</span>
           </div>
           <p>
-            Modélisation CAT Cyber (empirique & scénarios), calibrage de pertes et
-            construction de dashboards pour piloter l’exposition. Croisement entre
-            cybersécurité, actuariat et data visualisation.
+            Modèle de prédiction de prix immobiliers basé sur les données DVF, avec feature engineering,
+            XGBoost et interface Streamlit. Le but : explorer la mise en production rapide d’un modèle
+            ML interprétable, utilisable par un non-tech.
           </p>
           <ul class="project-meta">
-            <li><strong>Stack :</strong> Python, stats, data viz, risk modelling.</li>
-            <li><strong>Focus :</strong> prise de décision, compréhension des risques extrêmes.</li>
+            <li><strong>Objectif :</strong> prototype interactif de pricing immobilier.</li>
+            <li><strong>Approche :</strong> nettoyage des données, création de features, tuning XGBoost, déploiement Streamlit.</li>
+            <li><strong>Stack :</strong> Python, pandas, XGBoost, Streamlit.</li>
           </ul>
-          <a href="#" class="project-link">
-            Détails confidentiels – résumé sur demande
+          <a href="https://github.com/Papushkado/Real-Estate-predictions" class="project-link" target="_blank">
+            Voir le repo “Real-Estate-predictions”
           </a>
         </article>
 
-        <!-- IoT & Prototypage -->
+        <!-- ============================
+             IOT & PROTOTYPAGE
+        ============================= -->
         <article class="project-card">
           <div class="project-header">
-            <h2>Indoor Localisation & SMARTIES</h2>
+            <h2>Localisation Indoor & SMARTIES (IoT)</h2>
             <span class="project-tag">IoT & Prototypage</span>
           </div>
           <p>
-            Recherche sur la localisation indoor (bluetooth fingerprinting, K-NN / SVM)
-            et projet SMARTIES : soirées connectées avec capteurs et WebSocket.
-            Mélange de réseau, IA, IoT et expérience utilisateur.
+            Deux projets complémentaires : un travail de recherche sur la localisation indoor
+            (bluetooth fingerprinting, K-NN / SVM) et SMARTIES, des “soirées connectées” mêlant capteurs
+            et WebSocket pour créer des expériences interactives. Mélange d’IA, réseau et UX.
           </p>
           <ul class="project-meta">
-            <li><strong>Stack :</strong> Bluetooth, K-NN/SVM, API WebSocket, capteurs IoT.</li>
-            <li><strong>Focus :</strong> prototypage rapide, expérimentation, fun.</li>
+            <li><strong>Localisation :</strong> bluetooth fingerprinting, K-NN / SVM, évaluation sur données réelles.</li>
+            <li><strong>SMARTIES :</strong> architecture temps réel avec API WebSocket et capteurs physiques.</li>
+            <li><strong>Stack :</strong> Python / scikit-learn, WebSocket, IoT, Linux.</li>
           </ul>
           <a href="https://github.com/Papushkado/GIN206_localisation_indoors" class="project-link" target="_blank">
-            Localisation Indoor
+            Localisation indoor – repo
           </a>
           <br>
           <a href="https://github.com/Papushkado/ioT_Telecom" class="project-link" target="_blank">
-            SMARTIES – Soirées connectées
+            SMARTIES – soirées connectées
           </a>
         </article>
+
+        <!-- ============================
+             FINANCE / ANALYSE
+        ============================= -->
+        <article class="project-card">
+          <div class="project-header">
+            <h2>Trading Analysis – critères de Graham sur le SBF120</h2>
+            <span class="project-tag">Finance · Data</span>
+          </div>
+          <p>
+            Application de visualisation et d’analyse de critères financiers (type Graham) appliqués
+            aux actions du SBF120. Le but : rendre tangible une approche “value investing” à partir
+            de données réelles, via des dashboards clairs.
+          </p>
+          <ul class="project-meta">
+            <li><strong>Objectif :</strong> explorer un screening quantitatif simple mais raisonnable des titres.</li>
+            <li><strong>Concepts :</strong> critères fondamentaux, scoring, visualisation des signaux.</li>
+            <li><strong>Stack :</strong> Python, pandas, visualisation (Dash/Plotly ou équivalent selon implémentation).</li>
+          </ul>
+          <a href="https://github.com/Papushkado/Trading_Analysis_Graham" class="project-link" target="_blank">
+            Voir le repo “Trading_Analysis_Graham”
+          </a>
+        </article>
+
       </div>
     </section>
   </main>
