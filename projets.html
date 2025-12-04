@@ -47,14 +47,14 @@
             Projet de recherche M2 (2025) : développement d’un modèle hiérarchique bayésien pour estimer
             la durée de fonctionnement de véhicules de chantier dans un contexte assurantiel. Le modèle
             combine une loi de Weibull pour les durées de fonctionnement et une loi exponentielle pour les
-            durées de maintenance, en intégrant des covariables chantier et maintenance (sol, météo,
-            distance, techniciens…).
+            durées de maintenance, en intégrant des covariables chantier et maintenance
+            (sol, météo, distance, techniciens…).
           </p>
           <ul class="project-meta">
             <li>
               <strong>Objectif :</strong> prédire la durée de vie résiduelle, quantifier l’incertitude
-              et proposer une méthodologie de tarification pour les contrats d’assurance (facteur de risque,
-              durée de couverture, prime ajustée).
+              et proposer une méthodologie de tarification pour les contrats d’assurance
+              (facteur de risque, durée de couverture, prime ajustée).
             </li>
             <li>
               <strong>Approche :</strong> modèles linéaires & réseaux de neurones pour les fonctions
@@ -77,6 +77,52 @@
         </article>
 
         <!-- ============================
+             CLOUD & INFRA / DEVOPS
+        ============================= -->
+        <article class="project-card">
+          <div class="project-header">
+            <h2>Cloud Design Patterns : cluster MySQL haute dispo sur AWS</h2>
+            <span class="project-tag">Cloud & DevOps</span>
+          </div>
+          <p>
+            Implémentation d’un cluster MySQL complet sur AWS EC2 en appliquant des design patterns cloud
+            (Proxy et Gatekeeper). L’infrastructure inclut un manager MySQL, deux workers, un proxy HTTP
+            pour le routage des requêtes et une chaîne de sécurité Gatekeeper + Trusted Host, le tout
+            déployé et benchmarké automatiquement.
+          </p>
+          <ul class="project-meta">
+            <li>
+              <strong>Architecture :</strong> VPC dédié, groupes de sécurité par rôle,
+              manager/replicas MySQL, instance Proxy, Gatekeeper exposé en entrée, Trusted Host
+              avec politiques IPtables par défaut en DROP.
+            </li>
+            <li>
+              <strong>Patterns implémentés :</strong>
+              Proxy pattern avec trois modes de routage (DIRECT_HIT, RANDOM, CUSTOMIZED suivant le ping et
+              la charge des nœuds) et Gatekeeper pattern pour contrôler le flux entrant, filtrer les requêtes
+              et isoler le Trusted Host.
+            </li>
+            <li>
+              <strong>Sécurité :</strong> VPC isolé, security groups fins, IPtables sur le Trusted Host
+              (DROP par défaut, SSH restreint, port applicatif limité au VPC), chaîne Gatekeeper→Trusted Host→Proxy→Cluster.
+            </li>
+            <li>
+              <strong>Benchmark :</strong> campagnes Sysbench automatisées, comparaison des trois modes
+              (latence moyenne, CPU CloudWatch, succès à 100%). Direct Hit maximise la vitesse brute,
+              Random rééquilibre la charge, Customized optimise la stabilité et l’utilisation CPU
+              (&lt; 20% sur tous les nœuds).
+            </li>
+            <li>
+              <strong>Stack :</strong> AWS EC2/VPC/Security Groups/CloudWatch, Python (boto3, requests),
+              MySQL, Sysbench, IPtables, Flask pour les endpoints HTTP.
+            </li>
+          </ul>
+          <a href="https://github.com/Papushkado/DBCluster" class="project-link" target="_blank">
+            Voir le repo “DBCluster”
+          </a>
+        </article>
+
+        <!-- ============================
              CYBERSÉCURITÉ & RED TEAM
         ============================= -->
         <article class="project-card">
@@ -86,9 +132,9 @@
           </div>
           <p>
             Collection structurée de write-ups CTF couvrant OSINT, web-hacking, JWT, cryptographie,
-            IA et même challenges quantiques (404CTF, UnitedCTF, MidnightCTF…). L’objectif : documenter
-            les approches, les erreurs, les pivots et les learnings, plutôt que de simplement donner
-            “la solution”.
+            IA et même challenges quantiques (404CTF, UnitedCTF, MidnightCTF…). L’objectif :
+            documenter les approches, les erreurs, les pivots et les learnings, plutôt que de simplement
+            donner “la solution”.
           </p>
           <ul class="project-meta">
             <li><strong>Contenu :</strong> write-ups détaillés, scripts d’exploitation, notes de méthodo.</li>
@@ -97,29 +143,6 @@
           </ul>
           <a href="https://github.com/Papushkado/Write-ups-CTFs" class="project-link" target="_blank">
             Voir le repo “Write-ups-CTFs”
-          </a>
-        </article>
-
-        <!-- ============================
-             CLOUD & INFRA / DEVOPS
-        ============================= -->
-        <article class="project-card">
-          <div class="project-header">
-            <h2>DBCluster – Cluster MySQL haute dispo sur AWS</h2>
-            <span class="project-tag">Cloud & DevOps</span>
-          </div>
-          <p>
-            Mise en place d’un cluster MySQL haute disponibilité sur AWS avec ProxySQL, load-balancing
-            et sécurisation réseau. L’objectif est de disposer d’une base robuste, scalable et observable
-            pour des workloads critiques, en s’appuyant au maximum sur l’infra-as-code.
-          </p>
-          <ul class="project-meta">
-            <li><strong>Objectif :</strong> tolérance aux pannes, continuité de service, performances stables.</li>
-            <li><strong>Concepts :</strong> HA, failover, routage de requêtes, durcissement de la surface d’attaque.</li>
-            <li><strong>Stack :</strong> AWS, MySQL, ProxySQL, (Terraform / Docker / Ansible selon setup).</li>
-          </ul>
-          <a href="https://github.com/Papushkado/DBCluster" class="project-link" target="_blank">
-            Voir le repo “DBCluster”
           </a>
         </article>
 
@@ -138,7 +161,8 @@
           </p>
           <ul class="project-meta">
             <li><strong>Objectif :</strong> prototype interactif de pricing immobilier.</li>
-            <li><strong>Approche :</strong> nettoyage des données, création de features, tuning XGBoost, déploiement Streamlit.</li>
+            <li><strong>Approche :</strong> nettoyage des données, création de features,
+              tuning XGBoost, déploiement Streamlit.</li>
             <li><strong>Stack :</strong> Python, pandas, XGBoost, Streamlit.</li>
           </ul>
           <a href="https://github.com/Papushkado/Real-Estate-predictions" class="project-link" target="_blank">
@@ -160,7 +184,8 @@
             et WebSocket pour créer des expériences interactives. Mélange d’IA, réseau et UX.
           </p>
           <ul class="project-meta">
-            <li><strong>Localisation :</strong> bluetooth fingerprinting, K-NN / SVM, évaluation sur données réelles.</li>
+            <li><strong>Localisation :</strong> bluetooth fingerprinting, K-NN / SVM,
+              évaluation sur données réelles.</li>
             <li><strong>SMARTIES :</strong> architecture temps réel avec API WebSocket et capteurs physiques.</li>
             <li><strong>Stack :</strong> Python / scikit-learn, WebSocket, IoT, Linux.</li>
           </ul>
@@ -189,7 +214,7 @@
           <ul class="project-meta">
             <li><strong>Objectif :</strong> explorer un screening quantitatif simple mais raisonnable des titres.</li>
             <li><strong>Concepts :</strong> critères fondamentaux, scoring, visualisation des signaux.</li>
-            <li><strong>Stack :</strong> Python, pandas, visualisation (Dash/Plotly ou équivalent selon implémentation).</li>
+            <li><strong>Stack :</strong> Python, pandas, visualisation (Dash/Plotly ou équivalent).</li>
           </ul>
           <a href="https://github.com/Papushkado/Trading_Analysis_Graham" class="project-link" target="_blank">
             Voir le repo “Trading_Analysis_Graham”
