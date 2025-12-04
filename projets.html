@@ -35,50 +35,7 @@
 
       <div class="projects-grid">
 
-        <!-- ============================
-             ACTUARIAT & RISK MODELLING
-        ============================= -->
-        <article class="project-card">
-          <div class="project-header">
-            <h2>Estimation bayésienne de la durée de fonctionnement des véhicules de chantier</h2>
-            <span class="project-tag">Actuariat · Bayésien</span>
-          </div>
-          <p>
-            Projet de recherche M2 (2025) : développement d’un modèle hiérarchique bayésien pour estimer
-            la durée de fonctionnement de véhicules de chantier dans un contexte assurantiel. Le modèle
-            combine une loi de Weibull pour les durées de fonctionnement et une loi exponentielle pour les
-            durées de maintenance, en intégrant des covariables chantier et maintenance
-            (sol, météo, distance, techniciens…).
-          </p>
-          <ul class="project-meta">
-            <li>
-              <strong>Objectif :</strong> prédire la durée de vie résiduelle, quantifier l’incertitude
-              et proposer une méthodologie de tarification pour les contrats d’assurance
-              (facteur de risque, durée de couverture, prime ajustée).
-            </li>
-            <li>
-              <strong>Approche :</strong> modèles linéaires & réseaux de neurones pour les fonctions
-              de lien <code>g₁</code> et <code>g₂</code>, estimation fréquentiste (MLE) puis
-              inférence bayésienne (Metropolis–Hastings adaptatif), validation sur données simulées.
-            </li>
-            <li>
-              <strong>Insights clés :</strong> importance dominante de la nature du sol,
-              rôle plus modéré de la maintenance précédente, possibilité de catégoriser les chantiers
-              par niveau de risque et d’ajuster les primes en conséquence.
-            </li>
-            <li>
-              <strong>Stack :</strong> Python (pandas, NumPy, PyMC3 / MCMC maison), stats bayésiennes,
-              analyse de survie (Weibull, exponentielle), visualisation.
-            </li>
-          </ul>
-          <a href="https://github.com/Papushkado/Bayesian_Statistics" class="project-link" target="_blank">
-            Voir le repo “Bayesian_Statistics”
-          </a>
-        </article>
-
-        <!-- ============================
-             CLOUD & INFRA / DEVOPS
-        ============================= -->
+        <!-- 1. CLOUD & INFRA / DEVOPS ======================= -->
         <article class="project-card">
           <div class="project-header">
             <h2>Cloud Design Patterns : cluster MySQL haute dispo sur AWS</h2>
@@ -122,9 +79,7 @@
           </a>
         </article>
 
-        <!-- ============================
-             CYBERSÉCURITÉ & RED TEAM
-        ============================= -->
+        <!-- 2. CYBERSÉCURITÉ & RED TEAM ===================== -->
         <article class="project-card">
           <div class="project-header">
             <h2>Write-ups CTFs & Red Team</h2>
@@ -146,9 +101,86 @@
           </a>
         </article>
 
-        <!-- ============================
-             DATA SCIENCE / PRÉDICTION
-        ============================= -->
+        <!-- 3. ACTUARIAT & RISK MODELLING ==================== -->
+        <article class="project-card">
+          <div class="project-header">
+            <h2>Estimation bayésienne de la durée de fonctionnement des véhicules de chantier</h2>
+            <span class="project-tag">Actuariat · Bayésien</span>
+          </div>
+          <p>
+            Projet de recherche M2 (2025) : développement d’un modèle hiérarchique bayésien pour estimer
+            la durée de fonctionnement de véhicules de chantier dans un contexte assurantiel. Le modèle
+            combine une loi de Weibull pour les durées de fonctionnement et une loi exponentielle pour les
+            durées de maintenance, en intégrant des covariables chantier et maintenance
+            (sol, météo, distance, techniciens…).
+          </p>
+          <ul class="project-meta">
+            <li>
+              <strong>Objectif :</strong> prédire la durée de vie résiduelle, quantifier l’incertitude
+              et proposer une méthodologie de tarification pour les contrats d’assurance
+              (facteur de risque, durée de couverture, prime ajustée).
+            </li>
+            <li>
+              <strong>Approche :</strong> modèles linéaires & réseaux de neurones pour les fonctions
+              de lien <code>g₁</code> et <code>g₂</code>, estimation fréquentiste (MLE) puis
+              inférence bayésienne (Metropolis–Hastings adaptatif), validation sur données simulées.
+            </li>
+            <li>
+              <strong>Insights clés :</strong> importance dominante de la nature du sol,
+              rôle plus modéré de la maintenance précédente, possibilité de catégoriser les chantiers
+              par niveau de risque et d’ajuster les primes en conséquence.
+            </li>
+            <li>
+              <strong>Stack :</strong> Python (pandas, NumPy, PyMC3 / MCMC maison), stats bayésiennes,
+              analyse de survie (Weibull, exponentielle), visualisation.
+            </li>
+          </ul>
+          <a href="https://github.com/Papushkado/Bayesian_Statistics" class="project-link" target="_blank">
+            Voir le repo “Bayesian_Statistics”
+          </a>
+        </article>
+
+        <!-- 4. MAPREDUCE & SOCIAL GRAPH ====================== -->
+        <article class="project-card">
+          <div class="project-header">
+            <h2>MapReduce sur AWS : WordCount & recommandations sociales</h2>
+            <span class="project-tag">Cloud · Data Engineering</span>
+          </div>
+          <p>
+            TP avancé de calcul distribué sur AWS autour de deux axes :
+            (1) comparer les performances de différents frameworks (Hadoop, Spark, Linux simple) sur
+            un WordCount classique et (2) implémenter un système de recommandation d’amis dans un réseau
+            social à l’aide de MapReduce (détection de “friends-of-friends” et mutual friends).
+          </p>
+          <ul class="project-meta">
+            <li>
+              <strong>Expériences WordCount :</strong> mêmes datasets passés sur Hadoop (HDFS),
+              Spark et un pipeline Linux <code>cat | tr | sort | uniq</code> pour mesurer l’impact
+              de l’overhead cluster vs single node. Résultat : Linux ~13× plus rapide que Hadoop
+              sur de petits fichiers, Hadoop ~3× plus rapide que Spark dans ce setup précis.
+            </li>
+            <li>
+              <strong>Recommandations sociales :</strong> algorithme MapReduce qui génère des
+              recommandations d’amis à partir des amis d’amis :
+              phase Map pour émettre les paires de users partageant un ami commun, phase Reduce
+              pour compter les mutual friends et produire un top des suggestions par utilisateur.
+            </li>
+            <li>
+              <strong>Points intéressants :</strong> filtrage des amis directs pour ne pas les
+              recommander, gestion des secondes relations, tri par nombre d’amis communs,
+              résultats lisibles pour des IDs d’utilisateurs donnés.
+            </li>
+            <li>
+              <strong>Stack :</strong> Hadoop / HDFS, Spark, MapReduce, AWS, Python,
+              scripts de benchmark, manipulation de graphes sociaux.
+            </li>
+          </ul>
+          <a href="https://github.com/Papushkado/MapReduce" class="project-link" target="_blank">
+            Voir le repo “MapReduce”
+          </a>
+        </article>
+
+        <!-- 5. DATA SCIENCE / PRÉDICTION ===================== -->
         <article class="project-card">
           <div class="project-header">
             <h2>Prédiction immobilière avec XGBoost & Streamlit</h2>
@@ -170,9 +202,7 @@
           </a>
         </article>
 
-        <!-- ============================
-             IOT & PROTOTYPAGE
-        ============================= -->
+        <!-- 6. IOT & PROTOTYPAGE ============================= -->
         <article class="project-card">
           <div class="project-header">
             <h2>Localisation Indoor & SMARTIES (IoT)</h2>
@@ -198,9 +228,7 @@
           </a>
         </article>
 
-        <!-- ============================
-             FINANCE / ANALYSE
-        ============================= -->
+        <!-- 7. FINANCE / ANALYSE ============================= -->
         <article class="project-card">
           <div class="project-header">
             <h2>Trading Analysis – critères de Graham sur le SBF120</h2>
