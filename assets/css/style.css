@@ -20,6 +20,7 @@
     "Roboto", sans-serif;
 }
 
+
 /* Thème clair */
 :root[data-theme="light"] {
   --bg-main: #f5f7fb;
@@ -807,3 +808,4 @@ textarea:focus {
     align-items: flex-start;
   }
 }
+
