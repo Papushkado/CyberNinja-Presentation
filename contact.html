@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - Papushkado · Cyber Ninja</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="bg-overlay"></div>
+
+  <header class="main-header">
+    <div class="logo">
+      <span class="logo-symbol">忍</span>
+      <span class="logo-text">Ninja<span>Cloud</span></span>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Accueil</a>
+      <a href="projets.html" class="nav-link">Projets</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
+        ☾
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section contact-section">
+      <h1 class="section-title">Entrer en contact</h1>
+      <p class="section-intro">
+        Un besoin en cybersécurité, en architecture cloud, en modélisation de risque 
+        ou simplement envie d’échanger ? Laisse-moi un message furtif.
+      </p>
+
+      <div class="section-grid contact-grid">
+        <div class="card contact-card">
+          <h2>Me contacter</h2>
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Nom / Pseudo</label>
+              <input type="text" id="name" name="name" placeholder="Ton nom de ninja">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="ton.email@domaine.com">
+            </div>
+            <div class="form-group">
+              <label for="subject">Sujet</label>
+              <input type="text" id="subject" name="subject" placeholder="Ex : Cyber CAT model pour portefeuille PME">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Explique-moi ta mission, ton contexte, tes contraintes…"></textarea>
+            </div>
+            <button type="submit" class="btn primary-btn full-width">
+              Envoyer le signal
+            </button>
+            <p class="form-note">
+              (Formulaire front uniquement – à relier à un backend ou service type Formspree / Netlify Forms.)
+            </p>
+          </form>
+        </div>
+
+        <div class="card contact-card">
+          <h2>Coordonnées & présences</h2>
+          <ul class="contact-list">
+            <li><span class="label">Email :</span> <span>Stephen.cohen.pro@gmail.com</span></li>
+            <li><span class="label">LinkedIn :</span> <span>/in/stephen-cohen-491964163/</span></li>
+            <li><span class="label">GitHub :</span> <span>@Papushkado</span></li>
+            <li><span class="label">Localisation :</span> <span>Paris · Remote / hybride</span></li>
+          </ul>
+
+          <h3>Ce que je peux t’apporter</h3>
+          <ul class="bullet-list">
+            <li>Concevoir des architectures cloud et des pipelines robustes pour tes données sensibles.</li>
+            <li>Appliquer une approche actuarielle et data-driven à tes problématiques de risque (cyber, CAT, finance).</li>
+            <li>Explorer des idées “hors cadre” : IoT, prototypage, side projects, expérimentations rapides.</li>
+          </ul>
+
+          <h3>Valeurs & mindset</h3>
+          <ul class="bullet-list">
+            <li>Explorer l’inconnu plutôt que recycler les mêmes solutions.</li>
+            <li>Simplifier le complexe, sans sacrifier la rigueur.</li>
+            <li>Bâtir l’inattendu : des systèmes utiles, élégants et un peu décalés.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <span>© <span id="year"></span> Papushkado · Ninja Cloud Actuaire.</span>
+    <span class="footer-meta">Le silence est une feature, pas un bug.</span>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
